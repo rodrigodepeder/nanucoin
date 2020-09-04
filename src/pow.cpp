@@ -17,10 +17,12 @@
 #include <math.h>
 
 
-unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock)
+unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader* pblock, bool fProofOfStake)
 {
     if (Params().IsRegTestNet())
         return pindexLast->nBits;
+    
+    pindexLast = GetLastBlockIndex(pindexLast, fProofOfStake); 
 
     /* current difficulty formula, pivx - DarkGravity v3, written by Evan Duffield - evan@dashpay.io */
     const CBlockIndex* BlockLastSolved = pindexLast;
@@ -38,7 +40,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         return consensus.powLimit.GetCompact();
     }
 
-    if (consensus.NetworkUpgradeActive(pindexLast->nHeight + 1, Consensus::UPGRADE_POS)) {
+    if (pindexLast->IsProofOfStake()) { //consensus.NetworkUpgradeActive(pindexLast->nHeight + 1, Consensus::UPGRADE_POS)) {
         const bool fTimeV2 = !Params().IsRegTestNet() && consensus.IsTimeProtocolV2(pindexLast->nHeight+1);
         const uint256& bnTargetLimit = consensus.ProofOfStakeLimit(fTimeV2);
         const int64_t& nTargetTimespan = consensus.TargetTimespan(fTimeV2);
@@ -95,7 +97,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
             assert(BlockReading);
             break;
         }
-        BlockReading = BlockReading->pprev;
+        BlockReading = GetLastBlockIndex(BlockReading->pprev, false);
     }
 
     uint256 bnNew(PastDifficultyAverage);
