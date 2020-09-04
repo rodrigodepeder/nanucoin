@@ -8,9 +8,9 @@ reset-files.bash
 
 *.exe
 src/pivx
-src/pivxd
-src/pivx-cli
-src/pivx-tx
+src/nanucoind
+src/nanucoin-cli
+src/nanucoin-tx
 src/bench/bench_pivx
 src/test/test_pivx
 src/qt/test/test_pivx-qt
@@ -85,7 +85,7 @@ src/qt/test/moc*.cpp
 # Compilation and Qt preprocessor part
 *.qm
 Makefile
-pivx-qt
+nanucoin-qt
 PIVX-Qt.app
 background.tiff*
 

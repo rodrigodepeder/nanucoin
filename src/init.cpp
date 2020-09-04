@@ -377,7 +377,7 @@ std::string HelpMessage(HelpMessageMode mode)
     strUsage += HelpMessageOpt("-blocknotify=<cmd>", _("Execute command when the best block changes (%s in cmd is replaced by block hash)"));
     strUsage += HelpMessageOpt("-blocksizenotify=<cmd>", _("Execute command when the best block changes and its size is over (%s in cmd is replaced by block hash, %d with the block size)"));
     strUsage += HelpMessageOpt("-checkblocks=<n>", strprintf(_("How many blocks to check at startup (default: %u, 0 = all)"), 500));
-    strUsage += HelpMessageOpt("-conf=<file>", strprintf(_("Specify configuration file (default: %s)"), "pivx.conf"));
+    strUsage += HelpMessageOpt("-conf=<file>", strprintf(_("Specify configuration file (default: %s)"), "nanucoin.conf"));
     if (mode == HMM_BITCOIND) {
 #if !defined(WIN32)
         strUsage += HelpMessageOpt("-daemon", _("Run in the background as a daemon and accept commands"));
@@ -534,7 +534,7 @@ std::string HelpMessage(HelpMessageMode mode)
     }
     strUsage += HelpMessageOpt("-shrinkdebugfile", _("Shrink debug.log file on client startup (default: 1 when no -debug)"));
     strUsage += HelpMessageOpt("-testnet", _("Use the test network"));
-    strUsage += HelpMessageOpt("-litemode=<n>", strprintf(_("Disable all PIVX specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)"), 0));
+    strUsage += HelpMessageOpt("-litemode=<n>", strprintf(_("Disable all Nanucoin specific functionality (Masternodes, Zerocoin, SwiftX, Budgeting) (0-1, default: %u)"), 0));
 
 #ifdef ENABLE_WALLET
     strUsage += HelpMessageGroup(_("Staking options:"));
@@ -967,7 +967,7 @@ void InitLogging()
 #else
     version_string += " (release build)";
 #endif
-    LogPrintf("PIVX version %s (%s)\n", version_string, CLIENT_DATE);
+    LogPrintf("Nanucoin version %s (%s)\n", version_string, CLIENT_DATE);
 }
 
 /** Initialize pivx.
@@ -1120,7 +1120,7 @@ bool AppInit2()
 
     // Sanity check
     if (!InitSanityCheck())
-        return UIError(_("Initialization sanity check failed. PIVX Core is shutting down."));
+        return UIError(_("Initialization sanity check failed. Nanucoin Core is shutting down."));
 
     std::string strDataDir = GetDataDir().string();
 #ifdef ENABLE_WALLET
@@ -1136,7 +1136,7 @@ bool AppInit2()
 
     // Wait maximum 10 seconds if an old wallet is still running. Avoids lockup during restart
     if (!lock.timed_lock(boost::get_system_time() + boost::posix_time::seconds(10)))
-        return UIError(strprintf(_("Cannot obtain a lock on data directory %s. PIVX Core is probably already running."), strDataDir));
+        return UIError(strprintf(_("Cannot obtain a lock on data directory %s. Nanucoin Core is probably already running."), strDataDir));
 
 #ifndef WIN32
     CreatePidFile(GetPidFile(), getpid());
@@ -1743,9 +1743,9 @@ bool AppInit2()
                              " or address book entries might be missing or incorrect."));
                 UIWarning(msg);
             } else if (nLoadWalletRet == DB_TOO_NEW)
-                strErrors << _("Error loading wallet.dat: Wallet requires newer version of PIVX Core") << "\n";
+                strErrors << _("Error loading wallet.dat: Wallet requires newer version of Nanucoin Core") << "\n";
             else if (nLoadWalletRet == DB_NEED_REWRITE) {
-                strErrors << _("Wallet needed to be rewritten: restart PIVX Core to complete") << "\n";
+                strErrors << _("Wallet needed to be rewritten: restart Nanucoin Core to complete") << "\n";
                 LogPrintf("%s", strErrors.str());
                 return UIError(strErrors.str());
             } else

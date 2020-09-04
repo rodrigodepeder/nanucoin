@@ -67,11 +67,11 @@ TESTS =
 BENCHMARKS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += pivxd
+  bin_PROGRAMS += nanucoind
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += pivx-cli pivx-tx
+  bin_PROGRAMS += nanucoin-cli nanucoin-tx
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -491,15 +491,15 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # pivxd binary #
-pivxd_SOURCES = pivxd.cpp
-pivxd_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-pivxd_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-pivxd_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+nanucoind_SOURCES = nanucoind.cpp
+nanucoind_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+nanucoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+nanucoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-pivxd_SOURCES += pivxd-res.rc
+nanucoind_SOURCES += nanucoind-res.rc
 endif
-pivxd_LDADD = \
+nanucoind_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -513,38 +513,38 @@ pivxd_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-pivxd_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+nanucoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # pivx-cli binary #
-pivx_cli_SOURCES = pivx-cli.cpp
-pivx_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-pivx_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-pivx_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+nanucoin_cli_SOURCES = nanucoin-cli.cpp
+nanucoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+nanucoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+nanucoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-pivx_cli_SOURCES += pivx-cli-res.rc
+nanucoin_cli_SOURCES += nanucoin-cli-res.rc
 endif
 
-pivx_cli_LDADD = \
+nanucoin_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-pivx_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+nanucoin_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
 # pivx-tx binary #
-pivx_tx_SOURCES = pivx-tx.cpp
-pivx_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-pivx_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-pivx_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+nanucoin_tx_SOURCES = nanucoin-tx.cpp
+nanucoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+nanucoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+nanucoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-pivx_tx_SOURCES += pivx-tx-res.rc
+nanucoin_tx_SOURCES += nanucoin-tx-res.rc
 endif
 
-pivx_tx_LDADD = \
+nanucoin_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -552,7 +552,7 @@ pivx_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-pivx_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+nanucoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

@@ -51,9 +51,9 @@ static const int MAX_URI_LENGTH = 255;
 #define EXPORT_IMAGE_SIZE 256
 
 
-#define QAPP_ORG_NAME "PIVX"
-#define QAPP_ORG_DOMAIN "pivx.org"
-#define QAPP_APP_NAME_DEFAULT "PIVX-Qt"
-#define QAPP_APP_NAME_TESTNET "PIVX-Qt-testnet"
+#define QAPP_ORG_NAME "Nanucoin"
+#define QAPP_ORG_DOMAIN "nanucoin.com"
+#define QAPP_APP_NAME_DEFAULT "Nanucoin-Qt"
+#define QAPP_APP_NAME_TESTNET "Nanucoin-Qt-testnet"
 
 #endif // BITCOIN_QT_GUICONSTANTS_H

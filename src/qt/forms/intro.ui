@@ -101,7 +101,7 @@
                <string notr="true">QLabel { font-style:italic; }</string>
               </property>
               <property name="text">
-               <string>Welcome to PIVX Core.</string>
+               <string>Welcome to Nanucoin Core.</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
