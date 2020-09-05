@@ -1,3 +1,63 @@
+merge with pivx 4.2.0 source code - 2020
+
+nanucoin (NNC)
+project 2017-11-12
+
+## Coin specs:
+### Algo: 
+Xevan
+
+### N0 PREMINE
+
+#### PoW Block Reward:
+[block # 000001-043200] 5.0 NNC - 40% MN / 60% + fees MINER (supply   216.000 NNC)<br>
+[block # 043201-086400] 4.5 NNC - 40% MN / 60% + fees MINER (supply   410.400 NNC)<br>
+[block # 086401-129600] 4.0 NNC - 40% MN / 60% + fees MINER (supply   583.200 NNC)<br>
+[block # 129601-172800] 3.5 NNC - 40% MN / 60% + fees MINER (supply   734.400 NNC)<br>
+[block # 172801-216000] 3.0 NNC - 40% MN / 60% + fees MINER (supply   864.000 NNC)<br>
+[block # 216001-259200] 2.5 NNC - 40% MN / 60% + fees MINER (supply   972.000 NNC)<br>
+[block # 259201-302400] 2.0 NNC - 40% MN / 60% + fees MINER (supply 1.058.400 NNC)<br>
+[block # 302401-345600] 1.5 NNC - 40% MN / 60% + fees MINER (supply 1.123.200 NNC)<br>
+[block # 345601-388800] 1.0 NNC - 40% MN / 60% + fees MINER (supply 1.166.400 NNC)<br>
+
+#### PoW/PoS (Hybrid) Block Reward: (burn fees)
+[block #388801-432000] 0.95 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #432001-475200] 0.90 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #475201-518400] 0.85 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #518401-561600] 0.80 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #561601-604800] 0.75 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #604801-648000] 0.70 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #648001-691200] 0.65 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #691201-734400] 0.60 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #734401-777600] 0.55 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #777601-820800] 0.50 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #820801-864000] 0.45 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #864001-907200] 0.40 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #907201-950400] 0.35 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #950401-993600] 0.30 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #993601-1036800] 0.25 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #1036801-1080000] 0.20 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #1080001-1123200] 0.15 NNC - 70% MN / 30% MINER OR STAKER<br>
+[block #1123201--------] 0.10 NNC - 70% MN / 30% MINER OR STAKER<br>
+
+#### Block Time:
+60 Seconds with Retargeting every Block
+
+#### Max Coin Supply:
+PoW Phase: 1166400 NNC
+
+#### Max Coin Supply:
+PoW/PoS Phase: Infinte
+
+Masternodes: 10000 NNC collateral
+
+Budget system ENABLED
+Budget proposal fee 10.0 NNC
+https://www.nanucoin.com.br/budget
+
+----------------------------------------------------------------------------------
+
+
 PIVX Core integration/staging repository
 =====================================
 
